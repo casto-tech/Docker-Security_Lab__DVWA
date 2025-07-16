@@ -5,9 +5,9 @@
     docker compose up -d
 ```
 
-### Connect to the localhost port you set on line 15
+### Connect to the localhost port you set on line 16
 ``` bash
-    localhost:3011
+    localhost:3000
 ```
 
 ### Update & Upgade (In the Kali Container)

