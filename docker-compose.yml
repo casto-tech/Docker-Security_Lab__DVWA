@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  kali-linux:
+    image: lscr.io/linuxserver/kali-linux:latest
+    container_name: kali_linux
+    security_opt: 
+    - seccomp=unconfined
+    environment:
+    - PUID=1000 
+    - PGID=1000 
+    - TZ=America/Los_Angeles 
+    - SUBFOLDER=/ 
+    - TITLE="Kali Linux"
+    ports:
+    - "3011:3000"
+    - "3009:3001"
+    restart: unless-stopped
+    networks:
+    - hackinglab
+    - default
+
+  web-dvwa:
+    image: vulnerables/web-dvwa
+    container_name: web-dvwa
+    networks:
+      - hackinglab
+    command: /bin/sh -c "while true; do sleep 30; done;"
+
+networks:
+  hackinglab:
+    driver: bridge
+    internal: true
